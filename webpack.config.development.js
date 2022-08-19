@@ -4,10 +4,13 @@ const path = require('path');
 const config = require('./webpack.config'); //Requiere configuración de webpack
 
 module.exports = merge(config, {
+  //Exportamos los modulos que nos interesan en objetos
   mode: 'development', //Modo desarrollo activado
   devtool: 'inline-source-map',
   devServer: {
-    writeToDisk: true,
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
 
   output: {
