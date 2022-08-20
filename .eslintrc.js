@@ -1,11 +1,11 @@
 module.exports = {
-  //Sirve para ser consistente y tener una sintaxis correcta, entre otras cosas quita los ;
+  // Sirve para ser consistente y tener una sintaxis correcta, entre otras cosas quita los ; Ten cuidado si tienes instalado otros formatters como Prettier
   root: true,
-  extends: ["standard"],
+  extends: ['standard'],
   globals: {
-    IS_DEVELOPMENT: "readonly",
+    IS_DEVELOPMENT: 'readonly'
   },
-  parseOptions: {
-    ecmasVersion: 2020,
-  },
-};
+  parserOptions: {
+    ecmasVersion: 2020
+  }
+}
