@@ -54,12 +54,15 @@ module.exports = {
     }),
     new ImageMinimizerPlugin({
       // Optimizado de imágenes
-      minimizerOptions: {
-        plugins: [
-          ['gifsicle', { interlaced: true }],
-          ['jpegtran', { progressive: true }],
-          ['optipng', { optimizationLevel: 8 }]
-        ]
+      minimizer: {
+        implementation: ImageMinimizerPlugin.imageminMinify,
+        options: {
+          plugins: [
+            ['gifsicle', { interlaced: true }],
+            ['jpegtran', { progressive: true }],
+            ['optipng', { optimizationLevel: 7 }]
+          ]
+        }
       }
     })
   ],
