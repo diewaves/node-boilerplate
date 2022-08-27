@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+// Utiliza const en lugar de imports ya que no tenemos configurado como module en el package.json
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -15,12 +16,14 @@ const initApi = req => {
 
 // Integración con Prismic
 const Prismic = require('@prismicio/client')
-const PrismicDOM = require('@prismicio/helpers')
+const PrismicDOM = require('prismic-dom')
 
 // Los link resolvers nos ayudarán a navegar por la estructura de la web y llamar a las páginas que necesitemos
 const handleLinkResolver = doc => {
-  // if (doc.type === 'page') return `/${doc.lang}/${doc.uid}`
-  // if (doc.type === 'homepage') return `/${doc.lang}`
+  if (doc.type === 'about') {
+    return '/about'
+  }
+
   return '/'
 }
 
